@@ -5,7 +5,6 @@ import { FuseScrollbars } from '@fuse';
 import { bindActionCreators } from 'redux';
 import connect from 'react-redux/es/connect/connect';
 import * as Actions from '../store/actions'
-import _ from '@lodash';
 
 const styles = theme => ({
     root                : {},

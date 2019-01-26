@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { withStyles, Grid, Paper, Input, Icon, AppBar, Toolbar, Typography, TextField, Chip } from '@material-ui/core';
+import { withStyles, Grid, Paper, Input, Icon } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import { FuseScrollbars, FuseAnimate } from '@fuse';
 import { bindActionCreators } from 'redux';
 import connect from 'react-redux/es/connect/connect';
 import * as Actions from '../store/actions'
 import UserGistTable from './UserGistTable';
-import classNames from 'classnames';
 import _ from '@lodash';
 
 const styles = theme => ({
@@ -27,8 +25,7 @@ const styles = theme => ({
 
 class UserGistSearch extends Component {
     state = {
-        gistUserSearchText: '',
-        gistUserBadge: []
+        gistUserSearchText: ''
     };
 
     componentDidMount() {
@@ -53,7 +50,7 @@ class UserGistSearch extends Component {
     }
 
     render() {
-        const { gistUserSearchText, gistUserBadge } = this.state;
+        const { gistUserSearchText } = this.state;
         const { classes, gistuser } = this.props;
     
         return (
@@ -100,7 +97,6 @@ class UserGistSearch extends Component {
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         getGistUserDetails: Actions.getGistUserDetails
-        // getGistUserForks: Actions.getGistUserForks
     }, dispatch);
 }
 

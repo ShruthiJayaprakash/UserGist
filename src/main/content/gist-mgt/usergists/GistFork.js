@@ -13,7 +13,9 @@ import reducer from './../store/reducers';
 
 const styles = {
     card: {
-        maxWidth: 345
+        maxWidth: 345,
+        padding:10,
+        margin:10
     },
     media: {
         height: 350,
@@ -91,11 +93,12 @@ class GistFork extends Component {
                                         }
                                         )}
                                     {gistuser && gistuser.forkdata && gistuser.forkdata.length === 0 &&
-                                        <FuseAnimate animation="transition.expandIn" delay={100}>
-                                            <Typography variant="h4" color="inherit" className="font-medium mb-16">
+                                        
+                                        // <FuseAnimate animation="transition.expandIn" delay={100}>
+                                            <Typography variant="h4" color="inherit" className="font-medium pl-16 mb-16 mt-16">
                                                 Forks Data Not Available.
                                          </Typography>
-                                        </FuseAnimate>
+                                        // </FuseAnimate>
                                     }
                                 </Grid>
                             </Paper>
